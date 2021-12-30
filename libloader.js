@@ -1,5 +1,37 @@
 var lua = require("lua-in-js");
 var funcDict = [];
+var deasync = require("deasync");
+
+/**
+ * Checks if object is function and which function type
+ * @param {*} x The object to check.
+ * @returns {"class"|"function"|"async"|null}
+ */
+var isFunction = x=>typeof x !== 'function'?null:x.hasOwnProperty('arguments')?'function':x.prototype?'class':x.constructor.name=='AsyncFunction'?'async':'function';
+
+/**
+ * Runs a promise sync
+ * @param {Promise} p The promise
+ * @returns {*} The promise response
+ * @throws If promise errors
+ */
+function awaitPromise(p) {
+    let done = false;
+    let ret;
+    let err;
+    p.then(arg => {
+      done = true;
+      ret = arg;
+    })
+    .catch(e => {
+      done = true;
+      err = e;
+    });
+    deasync.loopWhile(() => !done);
+    if (err) throw err;
+    return ret;
+}
+
 
 /**
  * Create a new loader for nodejs libs in lua
@@ -51,7 +83,8 @@ const LibLoader = function(uses) {
         out = new lua.Table(oout);
     }else if(typeof(obj) == "function") {
         funcDict.push(obj);
-        out = eval(`(...args)=>{return ObjectToTable((funcDict[${funcDict.length-1}])(...argv("${obj.name}",...args)))}`);
+        var funcType = isFunction(obj);
+        out = eval(`(...args)=>{var res = ${funcType=="class"?"new ":(funcType=="async"?"awaitPromise(":"")}(funcDict[${funcDict.length-1}])(...argv("${obj.name}",...args))${funcType=="async"?")":""};if(res instanceof Promise){return ObjectToTable(awaitPromise(res))}else{return ObjectToTable(res)}}`);
     }
     else{
         out = obj;
@@ -95,3 +128,4 @@ function argv(func,...args) {
 }
 
 module.exports = LibLoader;
+module.exports.ObjectToTable = ObjectToTable;
