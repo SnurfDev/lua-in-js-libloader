@@ -1,0 +1,22 @@
+{
+  "name": "libloader",
+  "version": "1.0.0",
+  "description": "",
+  "main": "libloader.js",
+  "keywords": [
+    "lua-in-js",
+    "library",
+    "wrapper",
+    "lua"
+  ],
+  "author": "Snurf08",
+  "homepage": "https://github.com/Snurf08/lua-in-js-libloader",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "dependencies": {
+    "lua-in-js": "^2.2.0"
+  },
+  "license": "ISC"
+}
