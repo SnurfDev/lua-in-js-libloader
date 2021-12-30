@@ -1,5 +1,7 @@
 
 # lua-in-js-libloader
+![npm](https://img.shields.io/npm/v/lua-libloader)
+
 A nodejs library wrapper for lua-in-js.
 
 This is a little project of mine, which allows you to refrence nodejs functions in lua using [lua-in-js](https://github.com/teoxoy/lua-in-js) by [teoxoy](https://github.com/teoxoy).
@@ -11,6 +13,12 @@ It currently supports:
  - [ ] Classes
  - [ ] async Functions / Promises
 
+## Installation
+```
+npm i lua-libloader
+```
+
+## Example
 Heres an example on how to use it:
 ```javascript
 //import stuff
