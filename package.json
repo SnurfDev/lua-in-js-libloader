@@ -1,5 +1,5 @@
 {
-  "name": "libloader",
+  "name": "lua-libloader",
   "version": "1.0.0",
   "description": "",
   "main": "libloader.js",
