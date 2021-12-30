@@ -2,7 +2,7 @@
 # lua-in-js-libloader
 A nodejs library wrapper for lua-in-js.
 
-This is a little project of mine, which allows you to refrence nodejs functions in lua using [lua-in-js](https://github.com/teoxoy/lua-in-js).
+This is a little project of mine, which allows you to refrence nodejs functions in lua using [lua-in-js](https://github.com/teoxoy/lua-in-js) by [teoxoy](https://github.com/teoxoy).
 
 It currently supports:
 
