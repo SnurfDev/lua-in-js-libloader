@@ -1,8 +1,9 @@
 
 # lua-in-js-libloader
-![npm](https://img.shields.io/npm/v/lua-libloader)
 
 A nodejs library wrapper for lua-in-js.
+
+[![npm](https://img.shields.io/npm/v/lua-libloader)](https://www.npmjs.com/package/lua-libloader)
 
 This is a little project of mine, which allows you to refrence nodejs functions in lua using [lua-in-js](https://github.com/teoxoy/lua-in-js) by [teoxoy](https://github.com/teoxoy).
 
