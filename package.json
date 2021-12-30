@@ -1,6 +1,6 @@
 {
   "name": "lua-libloader",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "",
   "main": "libloader.js",
   "keywords": [
@@ -16,7 +16,8 @@
     "url": "https://github.com/Snurf08/lua-in-js-libloader.git"
   },
   "dependencies": {
-    "lua-in-js": "^2.2.0"
+    "lua-in-js": "^2.2.0",
+    "deasync": "^0.1.24"
   },
   "license": "ISC"
 }
