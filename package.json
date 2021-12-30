@@ -13,7 +13,7 @@
   "homepage": "https://github.com/Snurf08/lua-in-js-libloader",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/Snurf08/lua-in-js-libloader.git"
   },
   "dependencies": {
     "lua-in-js": "^2.2.0"
