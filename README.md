@@ -60,7 +60,7 @@ Here is an example using a Promise:
 var lua = require("lua-in-js")
 var path = require("path");
 var fs = require("fs");
-var LibLoader = require("./libloader/libloader");
+var LibLoader = require("lua-libloader");
 
 //Define sleep function (Promise)
 function sleep(ms) {
