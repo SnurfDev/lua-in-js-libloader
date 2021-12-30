@@ -51,7 +51,7 @@ const LibLoader = function(uses) {
         out = new lua.Table(oout);
     }else if(typeof(obj) == "function") {
         funcDict.push(obj);
-        out = eval(`(...args)=>{return (funcDict[${funcDict.length-1}])(...argv("${obj.name}",...args))}`);
+        out = eval(`(...args)=>{return ObjectToTable((funcDict[${funcDict.length-1}])(...argv("${obj.name}",...args)))}`);
     }
     else{
         out = obj;
